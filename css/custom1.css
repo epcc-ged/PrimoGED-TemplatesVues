@@ -12,6 +12,49 @@ body {
 	font-family: "barlow", Arial, "Helvetica Neue", Helvetica, "Bitstream Vera Sans", sans-serif;
 }
 
+md-card.footer-etablissements {
+    background-color:#be3a34;
+}
+
+.etablissements {
+    background-color: #be3a34;
+    padding: 1em 0 1em 0;
+}
+
+.etablissements ul {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+}
+
+
+li.etablissement {
+    float: left;
+    margin: 0 1em 1em 0;
+}
+
+.etablissement img {
+    max-height: 63px;
+    line-height: 1.5;
+    padding-bottom: 0.3em;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.etablissement-link {
+    border-bottom:2px solid transparent;
+    display:inline-block;
+    transition:border .15s ease-in;
+}
+.etablissement-link:hover,
+.etablissement-link:active,
+.etablissement-link:focus {
+    border-bottom-color:rgba(255, 255, 255, 0.5);
+}
+
+
 /*Uncomment the follwoing lines to move facets to the left*/
 
 /*
