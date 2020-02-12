@@ -87,6 +87,22 @@ md-content.main {
 }
 
 
+/* Hide Tags in Detailed Display */
+[aria-label="Tags"]{display:none;}
+#tags{display:none;}
+
+/* Hide Tags in Menu Tab */
+a.md-button[aria-label="Tag"] {display:none;}
+a.md-button[aria-label="mainmenu.label.tags"] {display:none;}
+a.md-button[aria-label="nui.mainmenu.description.tags"] {display:none;}
+
+
+/* Hide virtual Browse fonction and button */
+div#virtualBrowse {display: none;}
+button[aria-label="Virtual Browse"] {display: none;}
+button[aria-label="Etagère virtuelle"] {display: none;}
+
+
 /*
 md-card.footer-etablissements {
     background-color:#be3a34;
