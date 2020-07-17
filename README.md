@@ -1,3 +1,3 @@
-# primo_template_package
+# Templates PRIMO VE GED
 
-Gestion de la page Primo VE Campus Condorcet GED
+Fichiers pour les templates des vues Primo VE du GED Campus Condorcet
