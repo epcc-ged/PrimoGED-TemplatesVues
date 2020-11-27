@@ -103,6 +103,54 @@ button[aria-label="Virtual Browse"] {display: none;}
 button[aria-label="Etagère virtuelle"] {display: none;}
 
 
+/****************** New style for request item ****************************/  
+.btnStyle {  
+    background-color: #519F47;  
+    color: white;  
+    padding: 10px 26px;  
+    text-align: center;  
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 16px;  
+    margin: 4px 2px;  
+    -webkit-transition-duration: 0.4s;  
+    transition-duration: 0.4s;  
+    cursor: pointer;  
+    border: 2px solid #519F47;  
+}  
+  
+.btnStyle:hover {  
+    background-color: #F3F3F3;  
+    color: #58A9DB;  
+}  
+
+/*********** New style for request item inside the list *****************/  
+.btnStyleInsideList {  
+    background-color: #519F47;  
+    color: white;  
+    padding: 6px 20px;  
+    text-align: center;  
+    text-decoration: none;  
+    display: inline-block;  
+    font-size: 16px;  
+    margin: 4px 2px;  
+    -webkit-transition-duration: 0.4s;  
+    transition-duration: 0.4s;  
+    cursor: pointer;  
+    border: 2px solid #519F47;  
+}  
+  
+.btnStyleInsideList:hover {  
+    background-color: #FFFFFF;  
+    color: #58A9DB;  
+}  
+  
+@media only screen and (max-width: 800px) {  
+    .btnStyleInsideList {  
+        margin-right: 30px;  
+    }  
+}  
+
 /*
 md-card.footer-etablissements {
     background-color:#be3a34;
