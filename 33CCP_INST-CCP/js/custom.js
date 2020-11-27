@@ -10,7 +10,37 @@
 	   /*var app = angular.module('centralCustom', ['angularLoad']);*/
 
 	/****************************************************************************************************/
-  
+ 	app.component('prmRequestServicesAfter', {
+		bindings: { parentCtrl: '<' },
+		controller: ['$scope',function($scope) {
+			let _this = this;
+			this.$onInit = function() {
+				let removeWatcher = $scope.$watch(function() {return _this.parentCtrl.services.serviceinfo}, function(serviceinfo) {
+					if (serviceinfo && serviceinfo.length > 0){
+						serviceinfo.splice(serviceinfo.findIndex(function(service) {return service.type === 'AlmaPurchaseRequest'}), 1);
+						removeWatcher();
+					}
+				});
+			}
+		}],
+		template: ''
+	});
+
+	app.component('almaHowovpAfter', {
+		bindings: { parentCtrl: '<' },
+		controller: ['$scope',function($scope) {
+			let _this = this;
+			this.$onInit = function() {
+				let removeWatcher = $scope.$watch(function() {return _this.parentCtrl.services.serviceinfo}, function(serviceinfo) {
+					if (serviceinfo && serviceinfo.length > 0){
+						serviceinfo.splice(serviceinfo.findIndex(function(service) {return service.type === 'AlmaPurchaseRequest'}), 1);
+						removeWatcher();
+					}
+				});
+			}
+		}],
+		template: ''
+	}); 
 
 	app.component('prmSearchResultListAfter', {
 		bindings: {parentCtrl: '<'},
@@ -68,6 +98,40 @@ function loadLibraries() {
 	document.getElementsByTagName("head")[0].appendChild(myCustomCSS);
 }
 
+// AlmaRequest  
+function moveRequestSectionToBeBelowLocationsSection(theElement) {  
+    $(theElement).closest("prm-opac").css("display", "flex");  
+    $(theElement).closest("prm-opac").css("flex-direction", "column");  
+    $(theElement).closest("div[layout='column']").css("order","1");  
+      
+  
+    $("md-divider[class='inner-divider md-primoExplore-theme']").remove();  
+      
+    $(theElement).closest("prm-service-button[method='GET']").css("height","60px");  
+      
+    $(theElement).closest("button").removeClass();  
+    $(theElement).closest("button").addClass("btnStyle");  
+      
+    $(theElement).closest("button").on("click", function() {  
+        $(theElement).closest("button").css("display","none")  
+    });  
+}
 
+// nui.items.back  
+function bringBackRequestItem(theElement) {  
+    $(theElement).closest("button").on("click", function() {  
+        var checkExistenceOfElement = setInterval(function() {  
+            if ($("button[class='btnStyle']").length > 0) {  
+                clearInterval(checkExistenceOfElement);  
+                $("button[class='btnStyle']").css("display","block");  
+            }  
+        }, 50); // check every 50ms   
+    });  
+}    
 
+// AlmaItemRequest  
+function giveStyleToRequestItemButtonInsideTheList(theElement) {  
+    $(theElement).closest("button").removeClass();  
+    $(theElement).closest("button").addClass("btnStyleInsideList");  
+}
 
